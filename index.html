@@ -3,11 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
 <title>Korve Estudio | Diseño y Desarrollo Web · Estudio Creativo</title>
 <meta name="description" content="Diseñamos y desarrollamos tu web con foco en conversión. Landing pages, rediseños y webs corporativas. Entrega en 2–4 semanas. Sin plantillas genéricas.">
+<meta name="keywords" content="diseño web Argentina, desarrollo web, landing page, rediseño web, estudio creativo, Mendoza">
+<meta name="author" content="Korve Estudio">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://korveestudio.com/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://korveestudio.com/">
+<meta property="og:title" content="Korve Estudio | Webs que convencen">
+<meta property="og:description" content="Diseño y desarrollo web para negocios. Webs claras, rápidas y pensadas para convertir visitas en consultas. Entrega en 2–4 semanas.">
+<meta property="og:image" content="https://korveestudio.com/img/og-image.jpg">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Korve Estudio">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Korve Estudio | Webs que convencen">
+<meta name="twitter:description" content="Diseño y desarrollo web para negocios. Webs claras, rápidas y pensadas para convertir visitas en consultas.">
+<meta name="twitter:image" content="https://korveestudio.com/img/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/img/logo.svg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
+<!-- Preconnect fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Korve Estudio",
+  "description": "Estudio creativo de diseño y desarrollo web en Argentina. Especialistas en webs que convierten.",
+  "url": "https://korveestudio.com",
+  "logo": "https://korveestudio.com/img/logo.svg",
+  "image": "https://korveestudio.com/img/og-image.jpg",
+  "address": { "@type": "PostalAddress", "addressCountry": "AR" },
+  "sameAs": [
+    "https://www.instagram.com/korve.estudio",
+    "https://wa.me/5492604822988"
+  ],
+  "priceRange": "USD 230–490",
+  "areaServed": "AR",
+  "serviceType": ["Diseño Web", "Desarrollo Web", "Landing Page", "Rediseño Web"]
+}
+</script>
 
 <style>
 /* ============================================================
@@ -64,14 +114,14 @@ body {
   overflow-x: hidden;
 }
 
-/* ============ GRAIN TEXTURE — stronger ============ */
+/* ============ GRAIN TEXTURE ============ */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.12'/%3E%3C/svg%3E");
   pointer-events: none;
-  z-index: 9999;
+  z-index: 1;
   mix-blend-mode: multiply;
 }
 
@@ -780,9 +830,40 @@ nav {
 @media (max-width: 900px) { .plans-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; } }
 
 /* ============ DIFFERENTIALS — Teal background ============ */
-#korve { background: var(--teal); color: var(--paper); }
+#korve {
+  background: var(--teal);
+  color: var(--paper);
+}
 #korve h2 { color: var(--paper); }
 .diff-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 40px; }
+
+/* Header de #korve: stripe-tab + texto + burst al lado del h2 */
+.korve-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 56px;
+  position: relative;
+  padding-right: 140px; /* espacio para el burst absoluto */
+}
+.korve-header-text { flex: 1; }
+.korve-burst {
+  position: absolute !important;
+  top: -20px;
+  right: 0;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .korve-header { padding-right: 0; }
+  .korve-burst {
+    position: static !important;
+    width: 72px !important;
+    height: 72px !important;
+    margin-top: 8px;
+    align-self: flex-start;
+  }
+  .korve-burst .burst-text { font-size: 7px; }
+}
 .diff-card {
   background: rgba(250,246,236,0.08);
   border: 1.5px solid rgba(250,246,236,0.2);
@@ -915,7 +996,7 @@ nav {
 }
 
 @media (max-width: 900px) { .notebook-grid { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 560px)  { .notebook-grid { grid-template-columns: 1fr; } .notebook-card { transform: none !important; } }
+@media (max-width: 560px) { .notebook-grid { grid-template-columns: 1fr; } }
 
 .need-box {
   background: var(--ink); color: var(--cream);
@@ -1002,11 +1083,11 @@ nav {
   background-color: #b8374a;
   background-image: repeating-linear-gradient(
     to bottom,
-    #b8374a  0px,  #b8374a  14px,
-    #c96878 14px, #c96878 28px
+    #b8374a  0px,  #b8374a  10px,
+    #c96878 10px, #c96878 20px
   );
   border-radius: 2px;
-  border: 1.5px solid rgba(30,26,20,0.2);
+  border: 1.5px solid var(--cream2);
   box-shadow: 2px 2px 0 rgba(30,26,20,0.15);
   flex-shrink: 0;
 }
@@ -1027,7 +1108,7 @@ nav {
   position: absolute;
   bottom: -1px; left: 0; right: 0;
   height: 10px;
-  background: var(--paper);
+  background: var(--cream);
   clip-path: polygon(
     0% 100%, 1% 20%, 2% 90%, 3% 10%, 4% 80%, 5% 30%, 6% 95%,
     7% 15%, 8% 85%, 9% 35%, 10% 90%, 11% 20%, 12% 75%, 13% 40%,
@@ -1046,6 +1127,7 @@ nav {
     98% 88%, 99% 14%, 100% 80%, 100% 100%
   );
 }
+/* Quitamos el ::after que ya no se necesita */
 .testimonials-grid {
   display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-bottom: 32px;
 }
@@ -1082,6 +1164,157 @@ nav {
 
 @media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; } }
 
+/* ============ TRABAJOS — Prueba social ============ */
+#trabajos { background: var(--cream2); }
+.trabajos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+}
+.trabajo-card {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-flat-lg);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.28s ease;
+  text-decoration: none;
+  color: var(--ink);
+}
+.trabajo-card:hover {
+  transform: translateY(-8px) rotate(-0.5deg);
+  box-shadow: 8px 8px 0 rgba(30,26,20,0.15);
+}
+/* Preview de la web — iframe o placeholder */
+.trabajo-preview {
+  width: 100%;
+  height: 200px;
+  background: var(--cream3);
+  border-bottom: 2px solid var(--ink);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trabajo-preview iframe {
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: top left;
+  pointer-events: none;
+  border: none;
+}
+.trabajo-preview-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%; height: 100%;
+  color: var(--ink3);
+}
+.trabajo-preview-placeholder svg {
+  width: 36px; height: 36px;
+  stroke: var(--ink3); fill: none;
+  stroke-width: 1.5; stroke-linecap: round;
+  opacity: 0.5;
+}
+.trabajo-preview-placeholder span {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  opacity: 0.5;
+}
+/* Rubro badge — esquina superior del preview */
+.trabajo-rubro {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 8px; font-weight: 800;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 2px;
+  z-index: 2;
+}
+/* Indicador "ver web" — aparece al hover */
+.trabajo-visit {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 8px 16px; border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  z-index: 3;
+}
+.trabajo-card:hover .trabajo-visit {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.trabajo-card:hover .trabajo-preview-placeholder {
+  opacity: 0.3;
+}
+.trabajo-info {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+.trabajo-nombre {
+  font-family: var(--font-body);
+  font-size: 15px; font-weight: 600;
+  letter-spacing: -0.01em; color: var(--ink);
+}
+.trabajo-desc {
+  font-size: 12px; color: var(--ink3);
+  line-height: 1.6; font-weight: 300;
+}
+.trabajo-tag-row {
+  display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap;
+}
+.trabajo-tag {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink2); background: var(--cream3);
+  border: 1.5px solid var(--cream3);
+  padding: 3px 10px; border-radius: 2px;
+}
+.trabajo-link-row {
+  margin-top: auto; padding-top: 14px;
+  border-top: 1px solid var(--cream3);
+  display: flex; align-items: center;
+  justify-content: space-between;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal);
+}
+.trabajo-link-row svg {
+  width: 14px; height: 14px;
+  stroke: var(--teal); fill: none;
+  stroke-width: 2; stroke-linecap: round;
+}
+/* Próximamente badge */
+.trabajo-soon {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: var(--mustard);
+  color: var(--ink);
+  font-size: 8px; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 2px;
+  z-index: 2;
+}
+
+@media (max-width: 900px) { .trabajos-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; } }
+
 /* ============ FAQS — Ink bg ============ */
 #faqs { background: var(--bg-dark); color: var(--cream); }
 #faqs h2 { color: var(--paper); }
@@ -1117,7 +1350,81 @@ nav {
 
 @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } }
 
-/* ============ CONTACT — Coral/Red section ============ */
+/* ============ FORM — estados mejorados ============ */
+.field-error {
+  display: block;
+  font-size: 11px;
+  color: var(--red);
+  margin-top: 4px;
+  min-height: 16px;
+  font-weight: 500;
+}
+.form-group input.invalid,
+.form-group textarea.invalid {
+  border-color: var(--red);
+}
+.form-group input.valid,
+.form-group textarea.valid {
+  border-color: var(--teal);
+}
+.form-success {
+  text-align: center;
+  padding: 40px 20px;
+}
+.form-success-icon {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--paper);
+  font-size: 24px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+}
+.form-success h3 {
+  font-size: 20px; font-weight: 600;
+  color: var(--ink); margin-bottom: 8px;
+}
+.form-success p {
+  font-size: 14px; color: var(--ink3);
+  line-height: 1.6;
+}
+.form-error-msg {
+  background: rgba(194,59,34,0.08);
+  border: 1.5px solid var(--red);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--red);
+}
+.form-error-msg a { color: var(--red); font-weight: 600; }
+
+/* Foco visible para accesibilidad */
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--mustard);
+  outline-offset: 3px;
+}
+
+/* Skip to content para lectores de pantalla */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 8px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 8px 16px;
+  border-radius: 0 0 4px 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
 #contacto { background: var(--coral); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; }
 .contact-left h2 { color: var(--paper); margin-bottom: 16px; }
@@ -1193,13 +1500,57 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
 .footer-cta .btn { font-size: 10px; padding: 9px 18px; border-color: rgba(242,234,216,0.25); color: var(--cream); }
 .footer-cta .btn:hover { background: var(--cream); color: var(--ink); border-color: var(--cream); }
 
-/* ============ SECTION HEADER ============ */
-.section-header { margin-bottom: 56px; }
-.section-header.center { text-align: center; }
-.section-header p { font-size: 15px; color: var(--ink2); max-width: 520px; margin-top: 14px; line-height: 1.7; font-weight: 300; }
+.section-header {
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.section-header.center {
+  align-items: center;
+  text-align: center;
+}
+.section-header p {
+  font-size: 15px; color: var(--ink2); max-width: 520px;
+  margin-top: 14px; line-height: 1.7; font-weight: 300;
+}
 .section-header.center p { margin-left: auto; margin-right: auto; }
+/* v-tag es un bloque propio dentro del flex column — siempre encima del h2 */
+.section-header .v-tag {
+  display: inline-flex;
+  align-self: flex-start;
+}
+.section-header.center .v-tag {
+  align-self: center;
+}
 
-/* ============ ANIMATIONS ============ */
+/* ============================================================
+   ANIMACIONES — GPU hint SOLO en elementos que NO usan
+   transform para su estado inicial (no rompe los reveal)
+   ============================================================ */
+.burst,
+.hero-card,
+.stamp,
+.price-pill.featured,
+.stripe-sticker,
+.hero-scroll-hint {
+  will-change: transform;
+}
+
+/* Reducir movimiento para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal, .reveal-left, .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1279,7 +1630,7 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
     position: absolute;
     left: auto;
     right: 0;
-    top: 200px;
+    top: 280px;
     transform: none;
     flex-direction: column;
     gap: 7px;
@@ -1349,8 +1700,12 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
   box-shadow: -6px 0 0 rgba(30,26,20,0.08);
+  pointer-events: none;
 }
-.mobile-nav-drawer.open { transform: translateX(0); }
+.mobile-nav-drawer.open {
+  transform: translateX(0);
+  pointer-events: all;
+}
 @media (max-width: 768px) { .mobile-nav-drawer { display: flex; } }
 
 .mobile-nav-drawer .drawer-close {
@@ -1401,8 +1756,12 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
   z-index: 998;
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
 }
-.drawer-overlay.open { opacity: 1; }
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
 @media (max-width: 768px) { .drawer-overlay { display: block; } }
 
 /* ============================================================
@@ -1410,19 +1769,33 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
    ============================================================ */
 
 /* Burst spinning más expresivo */
+@-webkit-keyframes burstSpin {
+  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  to   { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
 @keyframes burstSpin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
-.burst { animation: burstSpin 18s linear infinite; }
-.burst:hover { animation-duration: 4s; }
+.burst {
+  -webkit-animation: burstSpin 18s linear infinite;
+  animation: burstSpin 18s linear infinite;
+}
+.burst:hover { animation-duration: 4s; -webkit-animation-duration: 4s; }
 
 /* Flotado suave en el hero-card */
+@-webkit-keyframes floatCard {
+  0%, 100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
+  50%       { -webkit-transform: translateY(-8px); transform: translateY(-8px); }
+}
 @keyframes floatCard {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-8px); }
 }
-.hero-card { animation: floatCard 5s ease-in-out infinite; }
+.hero-card {
+  -webkit-animation: floatCard 5s ease-in-out infinite;
+  animation: floatCard 5s ease-in-out infinite;
+}
 
 /* CTA bands — efecto de brillo que atraviesa */
 @keyframes ctaShine {
@@ -1440,70 +1813,66 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
   animation: ctaShine 5s linear infinite;
 }
 
-/* Story blocks — micro hover con color de acento */
-.story-block {
-  transition: background 0.25s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
-}
-.story-block:hover:not(.highlight) {
-  background: #252117;
-  transform: translateY(-4px);
+/* Story blocks — micro hover — solo en dispositivos con cursor */
+@media (hover: hover) {
+  .story-block:hover:not(.highlight) {
+    background: #252117;
+    transform: translateY(-4px);
+  }
+  .plan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 0 rgba(30,26,20,0.15);
+  }
+  .plan-card.featured:hover { box-shadow: 0 12px 0 rgba(194,59,34,0.3); }
+  .notebook-card:hover { transform: translateY(-6px) rotate(-0.5deg); }
+  .problem-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-flat-lg); }
+  .deliverable-item:hover { transform: translateX(6px); background: rgba(45,122,110,0.07); }
+  .diff-card:hover { transform: translateX(6px); border-left-color: var(--teal-light); }
+  .hero-badges .badge:hover { transform: translateY(-3px); background: var(--cream3); }
+  .btn:hover { transform: translateY(-2px); }
+  .social-ticket:hover { transform: translateY(-3px) rotate(-1deg); box-shadow: 4px 5px 0 rgba(30,26,20,0.25); }
+  .trabajo-card:hover { transform: translateY(-8px) rotate(-0.5deg); box-shadow: 8px 8px 0 rgba(30,26,20,0.15); }
+  .trabajo-card:hover .trabajo-visit { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  .trabajo-card:hover .trabajo-preview-placeholder { opacity: 0.3; }
+  .price-pill:hover { transform: translateX(5px); box-shadow: -3px 0 0 var(--mustard); }
+  .price-pill.featured:hover { box-shadow: -3px 0 0 rgba(255,255,255,0.4); }
+  .faq-item:hover { background: rgba(242,234,216,0.04); }
+  .footer-col a:hover { transform: translateX(4px); }
+  .nav-links a:hover { transform: translateY(-1px); color: var(--red); }
+  .nav-links a:hover::after { width: 100%; }
 }
 
-/* Plan cards — hover lift con shadow colorida */
-.plan-card {
-  transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.28s ease;
+/* Stamp — wobble + rotate */
+@-webkit-keyframes stampWobble {
+  0%, 100% { -webkit-transform: rotate(-2deg) scale(1); transform: rotate(-2deg) scale(1); }
+  25%       { -webkit-transform: rotate(2deg) scale(1.04); transform: rotate(2deg) scale(1.04); }
+  50%       { -webkit-transform: rotate(-1deg) scale(1.01); transform: rotate(-1deg) scale(1.01); }
+  75%       { -webkit-transform: rotate(1.5deg) scale(1.03); transform: rotate(1.5deg) scale(1.03); }
 }
-.plan-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 0 rgba(30,26,20,0.15);
-}
-.plan-card.featured:hover { box-shadow: 0 12px 0 rgba(194,59,34,0.3); }
-
-/* Notebook cards en proceso — inclinación hover */
-.notebook-card {
-  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
-}
-.notebook-card:hover { transform: translateY(-6px) rotate(-0.5deg); }
-
-/* Problem cards */
-.problem-card {
-  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease;
-}
-.problem-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-flat-lg); }
-
-/* Deliverables — cada check tick al hacer hover en la fila */
-.deliverable-item {
-  transition: transform 0.15s ease, background 0.15s ease;
-  border-radius: 3px;
-  padding: 2px 6px;
-  margin: 0 -6px;
-}
-.deliverable-item:hover { transform: translateX(6px); background: rgba(45,122,110,0.07); }
-
-/* Stamp — combinamos el pulse con un rotate suave */
 @keyframes stampWobble {
   0%, 100% { transform: rotate(-2deg) scale(1); }
   25%       { transform: rotate(2deg)  scale(1.04); }
   50%       { transform: rotate(-1deg) scale(1.01); }
   75%       { transform: rotate(1.5deg) scale(1.03); }
 }
-.stamp { animation: stampWobble 4s ease-in-out infinite; }
+.stamp {
+  -webkit-animation: stampWobble 4s ease-in-out infinite;
+  animation: stampWobble 4s ease-in-out infinite;
+}
 
-/* Cursor personalizado en botones — escala en el texto */
+/* Cursor personalizado en botones */
 .btn { transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), background 0.2s ease, color 0.2s ease, box-shadow 0.18s ease; }
-.btn:hover { transform: translateY(-2px); }
 .btn:active { transform: translateY(0); }
 
-/* Badges del hero — entrada escalonada y micro hover */
+/* Badges del hero */
 .hero-badges .badge {
   transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), background 0.18s ease;
 }
-.hero-badges .badge:hover { transform: translateY(-3px); background: var(--cream3); }
 
 /* Section headers — línea decorativa animada bajo el h2 */
 .section-header h2, .contact-left h2 {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 /* Scroll indicator animado abajo del hero (solo desktop) */
@@ -1527,14 +1896,150 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
   width: 16px; height: 16px; stroke: var(--ink3); fill: none;
   stroke-width: 2; stroke-linecap: round;
 }
-@media (max-width: 768px) { .hero-scroll-hint { display: none; } }
+/* ============================================================
+   MOBILE — efectos touch (reemplazan hover que no existe en táctil)
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Active states para tactil */
+  .btn:active        { transform: scale(0.97); opacity: 0.9; }
+  .plan-card:active  { transform: translateY(-4px); box-shadow: 0 8px 0 rgba(30,26,20,0.12); }
+  .diff-card:active  { transform: translateX(4px); border-left-color: var(--teal-light); }
+  .faq-question:active { background: rgba(242,234,216,0.1); }
+  .social-ticket:active { transform: translateX(-3px); }
+  .trabajo-card:active { transform: translateY(-4px) rotate(-0.3deg); }
+
+  /* En mobile los hovers de nav no existen — quitar underline */
+  .nav-links a::after { display: none; }
+
+  /* Asegurar que burst gira en iOS */
+  .burst {
+    -webkit-animation: burstSpin 18s linear infinite;
+    animation: burstSpin 18s linear infinite;
+  }
+  .hero-card {
+    -webkit-animation: floatCard 5s ease-in-out infinite;
+    animation: floatCard 5s ease-in-out infinite;
+  }
+  .stamp {
+    -webkit-animation: stampWobble 4s ease-in-out infinite;
+    animation: stampWobble 4s ease-in-out infinite;
+  }
+  .price-pill.featured {
+    -webkit-animation: featuredPulse 3s ease-in-out infinite;
+    animation: featuredPulse 3s ease-in-out infinite;
+  }
+
+  /* Ticker más lento en mobile para que se lea mejor */
+  .ticker-inner { animation-duration: 30s; }
+
+  /* Reducir intensidad del float en hero-card para mobile */
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-4px); }
+  }
+}
+
+/* ============================================================
+   ANIMACIONES EXTRA — más vida
+   ============================================================ */
+
+/* Texto del h1 hero — cada línea entra con un leve slide desde abajo */
+#hero h1 { overflow: hidden; }
+
+/* Ticker — velocidad variable en hover ya existe, agregar dirección reversa en el segundo duplicado */
+@keyframes tickerReverse { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+/* Sunburst lento en CTA bands */
+.cta-band .sunburst-bg {
+  animation: sunburstRotate 25s linear infinite;
+}
+@keyframes sunburstRotate {
+  from { transform: rotate(0deg) scale(1.5); }
+  to   { transform: rotate(360deg) scale(1.5); }
+}
+
+/* Burst — texto interior con fade pulsante */
+@keyframes burstTextPulse {
+  0%, 100% { opacity: 0.9; }
+  50%       { opacity: 1; transform: scale(1.04); }
+}
+.burst-text { animation: burstTextPulse 3s ease-in-out infinite; }
+
+/* Story blocks */
+.story-block { transition: background 0.25s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1); }
+/* Plan cards */
+.plan-card { transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.28s ease; }
+/* Notebook cards */
+.notebook-card { transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1); }
+/* Problem cards */
+.problem-card { transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease; }
+/* Deliverables */
+.deliverable-item { transition: transform 0.15s ease, background 0.15s ease; border-radius: 3px; padding: 2px 6px; margin: 0 -6px; }
+/* Price pills */
+.price-pill { transition: transform 0.18s ease, box-shadow 0.18s ease; }
+
+/* diff-card / korve section */
+.diff-card {
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), border-left-color 0.25s ease;
+  border-left: 3px solid transparent;
+}
+
+/* FAQ items */
+.faq-item { transition: background 0.2s ease; }
+
+/* Stripe-sticker — wobble suave continuo */
+@keyframes stickerWobble {
+  0%, 100% { transform: rotate(-4deg); }
+  50%       { transform: rotate(-6deg) scale(1.03); }
+}
+.stripe-sticker { animation: stickerWobble 4s ease-in-out infinite; }
+
+/* Price pills featured — pulso de color */
+@keyframes featuredPulse {
+  0%, 100% { box-shadow: var(--shadow-flat); }
+  50%       { box-shadow: 0 0 0 4px rgba(194,59,34,0.2); }
+}
+.price-pill.featured { animation: featuredPulse 3s ease-in-out infinite; }
+
+/* Tranquilizers en contacto — entrada escalonada al hacer visible la sección */
+.tranquilizers li {
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.reveal.visible ~ * .tranquilizers li,
+.contact-left.reveal.visible .tranquilizers li { opacity: 1; transform: translateX(0); }
+.tranquilizers li:nth-child(1) { transition-delay: 0.1s; }
+.tranquilizers li:nth-child(2) { transition-delay: 0.2s; }
+.tranquilizers li:nth-child(3) { transition-delay: 0.3s; }
+.tranquilizers li:nth-child(4) { transition-delay: 0.4s; }
+.tranquilizers li:nth-child(5) { transition-delay: 0.5s; }
+
+/* Input focus — scale micro */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  transform: scale(1.005);
+}
+
+/* Footer links */
+.footer-col a {
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+/* Nav links */
+.nav-links a { display: inline-block; }
 </style>
-<body>
+</head>
+
+<!-- SKIP TO CONTENT — accesibilidad -->
+<a href="#hero" class="skip-link">Ir al contenido principal</a>
 
 <!-- MOBILE STICKY -->
 <div class="mobile-cta">
   <a href="#contacto" class="btn btn-dark">Cotizar mi web</a>
-  <a href="https://wa.me/5492604822988X" class="btn">WhatsApp</a>
+  <a href="https://wa.me/5492604822988" target="_blank" rel="noopener noreferrer" class="btn">WhatsApp</a>
 </div>
 
 <!-- NAV -->
@@ -1546,8 +2051,9 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
     </a>
     <ul class="nav-links">
       <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#trabajos">Trabajos</a></li>
       <li><a href="#korve">Por qué Korve</a></li>
+      <li><a href="#proceso">Proceso</a></li>
       <li><a href="#faqs">FAQs</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -1565,14 +2071,15 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
   <nav-label>Navegación</nav-label>
   <ul class="drawer-links">
     <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#trabajos">Trabajos</a></li>
     <li><a href="#korve">Por qué Korve</a></li>
+    <li><a href="#proceso">Proceso</a></li>
     <li><a href="#faqs">FAQs</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
   <div class="drawer-cta">
     <a href="#contacto" class="btn btn-dark">Cotizar mi proyecto →</a>
-    <a href="https://wa.me/5492604822988" class="btn" target="_blank">WhatsApp</a>
+    <a href="https://wa.me/5492604822988" target="_blank" rel="noopener noreferrer" class="btn">WhatsApp</a>
   </div>
 </div>
 
@@ -1583,11 +2090,11 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
 
   <!-- Tickets redes sociales — esquina derecha, absolutos sobre el hero -->
   <div class="hero-social-corner">
-    <a href="https://wa.me/5492604822988" target="_blank" rel="noopener" class="social-ticket wa">
+    <a href="https://wa.me/5492604822988" target="_blank" rel="noopener noreferrer" class="social-ticket wa">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       <span>WhatsApp</span>
     </a>
-    <a href="https://www.instagram.com/korve.estudio?igsh=bzJyaGw1OXhvNTFu" target="_blank" rel="noopener" class="social-ticket ig">
+    <a href="https://www.instagram.com/korve.estudio?igsh=bzJyaGw1OXhvNTFu" target="_blank" rel="noopener noreferrer" class="social-ticket ig">
       <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       <span>Instagram</span>
     </a>
@@ -1772,7 +2279,7 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
     <div class="solution-grid">
       <div class="reveal">
         <div class="v-tag teal">La solución Korve</div>
-        <h2>Una web que explica qué hacés,carga rápido y convierte <em>visitas en consultas.</em><br></h2>
+        <h2>Una web que explica qué hacés, carga rápido y convierte <em>visitas en consultas.</em></h2>
         <p style="color:var(--ink2);font-size:14px;margin:18px 0 24px;line-height:1.8;font-weight:300;">Diseñamos y desarrollamos tu web desde cero: ordenamos el contenido, definimos las secciones y dejamos el contacto visible en todo momento.</p>
         <ul class="solution-list">
           <li>Estructura y arquitectura de información pensada para vender</li>
@@ -1801,6 +2308,98 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
           <div class="deliverable-item"><span class="check">✓</span> 2 rondas de revisión incluidas</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRABAJOS — Prueba social -->
+<section id="trabajos" class="section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="v-tag mustard">Trabajos recientes</div>
+      <h2>Algunas webs que <em>ya están convirtiendo</em></h2>
+      <p>Cada proyecto arrancó desde cero, con identidad propia y foco en resultados.</p>
+    </div>
+    <div class="trabajos-grid">
+
+      <!-- Card 1 — Agrotecnología -->
+      <a href="#" class="trabajo-card reveal" target="_blank" rel="noopener noreferrer" aria-label="Ver web de agrotecnología">
+        <div class="trabajo-preview">
+          <span class="trabajo-rubro">Agrotecnología</span>
+          <span class="trabajo-soon">Próximamente</span>
+          <div class="trabajo-preview-placeholder">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <span>Sitio en desarrollo</span>
+          </div>
+          <div class="trabajo-visit">Ver sitio →</div>
+        </div>
+        <div class="trabajo-info">
+          <div class="trabajo-nombre">Agrotecnología</div>
+          <div class="trabajo-desc">Web corporativa para empresa del sector agroindustrial. Presentación de productos, servicios y contacto directo con distribuidores.</div>
+          <div class="trabajo-tag-row">
+            <span class="trabajo-tag">Web Corporativa</span>
+            <span class="trabajo-tag">Agro</span>
+            <span class="trabajo-tag">B2B</span>
+          </div>
+          <div class="trabajo-link-row">
+            <span>Próximamente</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2 — Cabaña -->
+      <a href="#" class="trabajo-card reveal" target="_blank" rel="noopener noreferrer" aria-label="Ver web de cabaña">
+        <div class="trabajo-preview">
+          <span class="trabajo-rubro">Turismo</span>
+          <span class="trabajo-soon">Próximamente</span>
+          <div class="trabajo-preview-placeholder">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>Sitio en desarrollo</span>
+          </div>
+          <div class="trabajo-visit">Ver sitio →</div>
+        </div>
+        <div class="trabajo-info">
+          <div class="trabajo-nombre">Cabaña</div>
+          <div class="trabajo-desc">Landing page para alojamiento turístico con galería, disponibilidad y reservas directas. Pensada para convertir visitas en consultas inmediatas.</div>
+          <div class="trabajo-tag-row">
+            <span class="trabajo-tag">Landing Page</span>
+            <span class="trabajo-tag">Turismo</span>
+            <span class="trabajo-tag">Reservas</span>
+          </div>
+          <div class="trabajo-link-row">
+            <span>Próximamente</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3 — Higiene y Seguridad -->
+      <a href="#" class="trabajo-card reveal" target="_blank" rel="noopener noreferrer" aria-label="Ver web de higiene y seguridad">
+        <div class="trabajo-preview">
+          <span class="trabajo-rubro">Seguridad</span>
+          <span class="trabajo-soon">Próximamente</span>
+          <div class="trabajo-preview-placeholder">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Sitio en desarrollo</span>
+          </div>
+          <div class="trabajo-visit">Ver sitio →</div>
+        </div>
+        <div class="trabajo-info">
+          <div class="trabajo-nombre">Higiene y Seguridad</div>
+          <div class="trabajo-desc">Web corporativa para empresa de higiene y seguridad laboral. Servicios, normativa, certificaciones y formulario de contacto para empresas.</div>
+          <div class="trabajo-tag-row">
+            <span class="trabajo-tag">Web Corporativa</span>
+            <span class="trabajo-tag">B2B</span>
+            <span class="trabajo-tag">Servicios</span>
+          </div>
+          <div class="trabajo-link-row">
+            <span>Próximamente</span>
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -1888,16 +2487,19 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
 <!-- DIFFERENTIALS — Teal -->
 <section id="korve" class="section">
   <div class="container">
-    <div class="section-header reveal" style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;">
-      <!-- Stripe tab decoration -->
-      <div class="stripe-tab" style="margin-top:4px;border-radius:3px;"></div>
-      <div style="flex:1;max-width:620px;">
+    <div class="korve-header reveal">
+      <!-- Stripe tab lateral izquierdo -->
+      <div class="stripe-tab" style="margin-top:4px;border-radius:3px;flex-shrink:0;"></div>
+      <!-- Texto: v-tag + h2 -->
+      <div class="korve-header-text">
         <div class="v-tag white">Por qué Korve</div>
         <h2>Trabajás con nosotros directamente: sin intermediarios, <em>sin sorpresas.</em></h2>
       </div>
-      <div class="burst" style="position:relative;flex-shrink:0;margin-top:8px;background:var(--mustard);">
+      <!-- Burst — absoluto esquina superior derecha -->
+      <div class="burst burst-sm korve-burst" style="background:var(--mustard);">
         <span class="burst-text">Estudio<br>Creativo<br>Arg.</span>
       </div>
+    </div>
     </div>
     <div class="diff-grid">
       <div class="diff-card reveal">
@@ -2107,52 +2709,102 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
           <li>También podés escribirnos por WhatsApp</li>
         </ul>
         <div style="margin-top:28px;">
-          <a href="https://wa.me/5492604822988" class="btn btn-outline-cream">Escribirnos por WhatsApp</a>
+          <a href="https://wa.me/5492604822988" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cream">Escribirnos por WhatsApp</a>
         </div>
       </div>
       <div class="reveal">
         <div class="contact-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Nombre</label>
-              <input type="text" placeholder="Tu nombre">
+          <!-- Estado de éxito -->
+          <div class="form-success" id="formSuccess" style="display:none;">
+            <div class="form-success-icon">✓</div>
+            <h3>¡Mensaje enviado!</h3>
+            <p>Te respondemos en 24–48 hs hábiles con una propuesta personalizada.</p>
+          </div>
+          <!-- Estado de error -->
+          <div class="form-error-msg" id="formError" style="display:none;">
+            <p>⚠ Hubo un error al enviar. Intentá de nuevo o escribinos por <a href="https://wa.me/5492604822988" target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
+          </div>
+
+          <form id="contactForm" novalidate>
+            <input type="hidden" name="_subject" value="Nueva consulta desde Korve Estudio">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="campo-nombre">Nombre <span aria-hidden="true" style="color:var(--red)">*</span></label>
+                <input
+                  type="text"
+                  id="campo-nombre"
+                  name="nombre"
+                  placeholder="Tu nombre"
+                  required
+                  autocomplete="name"
+                  minlength="2"
+                  aria-required="true"
+                >
+                <span class="field-error" id="error-nombre"></span>
+              </div>
+              <div class="form-group">
+                <label for="campo-email">Email <span aria-hidden="true" style="color:var(--red)">*</span></label>
+                <input
+                  type="email"
+                  id="campo-email"
+                  name="email"
+                  placeholder="tu@email.com"
+                  required
+                  autocomplete="email"
+                  aria-required="true"
+                >
+                <span class="field-error" id="error-email"></span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="campo-servicio">Servicio de interés</label>
+                <select id="campo-servicio" name="servicio" autocomplete="off">
+                  <option value="">Seleccioná un plan</option>
+                  <option value="landing">Landing Page — USD 320</option>
+                  <option value="rediseno">Rediseño Web — USD 230</option>
+                  <option value="corporativa">Web Corporativa — USD 490</option>
+                  <option value="asesoramiento">No sé, necesito asesoramiento</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="campo-objetivo">¿Qué querés lograr?</label>
+                <select id="campo-objetivo" name="objetivo" autocomplete="off">
+                  <option value="">Elegí un objetivo</option>
+                  <option value="ventas">Vender más / generar ventas</option>
+                  <option value="leads">Captar leads / consultas</option>
+                  <option value="presencia">Mejorar presencia online</option>
+                  <option value="lanzamiento">Lanzar un producto/servicio</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
             </div>
             <div class="form-group">
-              <label>Email o WhatsApp</label>
-              <input type="text" placeholder="tu@email.com">
+              <label for="campo-mensaje">Contanos tu proyecto <span aria-hidden="true" style="color:var(--red)">*</span></label>
+              <textarea
+                id="campo-mensaje"
+                name="mensaje"
+                placeholder="¿Qué hace tu negocio? ¿Qué problema querés resolver con la web?"
+                required
+                minlength="20"
+                aria-required="true"
+              ></textarea>
+              <span class="field-error" id="error-mensaje"></span>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Servicio de interés</label>
-              <select>
-                <option value="">Seleccioná un plan</option>
-                <option>Landing Page — USD 320</option>
-                <option>Rediseño Web — USD 230</option>
-                <option>Web Corporativa — USD 490</option>
-                <option>No sé, necesito asesoramiento</option>
-              </select>
+            <div class="form-submit">
+              <button type="submit" id="formSubmitBtn" class="btn btn-dark" style="width:100%;justify-content:center;">
+                <span id="btnText">Enviar consulta →</span>
+                <span id="btnLoading" style="display:none;">Enviando…</span>
+              </button>
             </div>
-            <div class="form-group">
-              <label>¿Qué querés lograr?</label>
-              <select>
-                <option value="">Elegí un objetivo</option>
-                <option>Vender más / generar ventas</option>
-                <option>Captar leads / consultas</option>
-                <option>Mejorar presencia online</option>
-                <option>Lanzar un producto/servicio</option>
-                <option>Otro</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Contanos tu proyecto</label>
-            <textarea placeholder="¿Qué hace tu negocio? ¿Qué problema querés resolver con la web?"></textarea>
-          </div>
-          <div class="form-submit">
-            <button class="btn btn-dark" style="width:100%;justify-content:center;">Enviar consulta →</button>
-          </div>
-          <p class="form-microcopy">Respondemos en 24-48 hs hábiles·</p>
+            <p class="form-microcopy">
+              Al enviar aceptás nuestra
+              <a href="/privacy" style="color:var(--ink3);text-decoration:underline;">política de privacidad</a>.
+              Respondemos en 24–48 hs hábiles.
+            </p>
+          </form>
         </div>
       </div>
     </div>
@@ -2175,6 +2827,7 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
         <div class="footer-col">
           <h5>Navegación</h5>
           <a href="#servicios">Servicios</a>
+          <a href="#trabajos">Trabajos</a>
           <a href="#proceso">Proceso</a>
           <a href="#korve">Por qué Korve</a>
           <a href="#faqs">FAQs</a>
@@ -2189,13 +2842,17 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
         <div class="footer-col">
           <h5>Contacto</h5>
           <a href="/cdn-cgi/l/email-protection#3f5750535e7f54504d495a5a4c4b4a5b5650115c5052"><span class="__cf_email__" data-cfemail="c5aeaab7b3a0a0b6b1b0a1acaa85a2a8a4aca9eba6aaa8">[email&#160;protected]</span></a>
-          <a href="https://wa.me/5492604822988">WhatsApp</a>
-          <a href="https://instagram.com/korveestudio">Instagram</a>
+          <a href="https://wa.me/5492604822988" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://www.instagram.com/korve.estudio?igsh=bzJyaGw1OXhvNTFu" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-legal">© 2026 Korve Estudio · <a href="#">Política de privacidad</a></div>
+      <div class="footer-legal">
+        © 2026 Korve Estudio ·
+        <a href="/privacy">Política de privacidad</a> ·
+        <a href="/privacy#datos">Tratamiento de datos</a>
+      </div>
       <div class="footer-cta">
         <a href="#contacto" class="btn">Cotizar mi web →</a>
       </div>
@@ -2249,6 +2906,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 /* ---- Scroll reveal con stagger por grilla ---- */
+const isMobile = window.innerWidth <= 768;
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -2256,20 +2914,129 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(e.target);
     }
   });
-}, { threshold: 0.08 });
+}, { threshold: isMobile ? 0.03 : 0.08, rootMargin: isMobile ? '0px 0px -20px 0px' : '0px' });
 
-document.querySelectorAll('.plans-grid, .diff-grid, .notebook-grid, .problems-grid, .story-grid').forEach(grid => {
+document.querySelectorAll('.plans-grid, .diff-grid, .notebook-grid, .problems-grid, .story-grid, .trabajos-grid').forEach(grid => {
   grid.querySelectorAll('.reveal').forEach((el, i) => {
     el.style.transitionDelay = `${i * 0.07}s`;
   });
 });
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
 
-/* ---- Nav scrolled ---- */
+/* ---- Formulario — validación + envío real ---- */
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+const formError   = document.getElementById('formError');
+const submitBtn   = document.getElementById('formSubmitBtn');
+const btnText     = document.getElementById('btnText');
+const btnLoading  = document.getElementById('btnLoading');
+
+function showFieldError(fieldId, errorId, msg) {
+  const field = document.getElementById(fieldId);
+  const err   = document.getElementById(errorId);
+  if (field && err) {
+    field.classList.add('invalid');
+    field.classList.remove('valid');
+    err.textContent = msg;
+  }
+}
+function clearFieldError(fieldId, errorId) {
+  const field = document.getElementById(fieldId);
+  const err   = document.getElementById(errorId);
+  if (field && err) {
+    field.classList.remove('invalid');
+    field.classList.add('valid');
+    err.textContent = '';
+  }
+}
+
+function validateForm() {
+  let valid = true;
+  const nombre  = document.getElementById('campo-nombre');
+  const email   = document.getElementById('campo-email');
+  const mensaje = document.getElementById('campo-mensaje');
+
+  if (!nombre.value.trim() || nombre.value.trim().length < 2) {
+    showFieldError('campo-nombre', 'error-nombre', 'Ingresá tu nombre (mínimo 2 caracteres).');
+    valid = false;
+  } else { clearFieldError('campo-nombre', 'error-nombre'); }
+
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email.value.trim() || !emailRe.test(email.value)) {
+    showFieldError('campo-email', 'error-email', 'Ingresá un email válido.');
+    valid = false;
+  } else { clearFieldError('campo-email', 'error-email'); }
+
+  if (!mensaje.value.trim() || mensaje.value.trim().length < 20) {
+    showFieldError('campo-mensaje', 'error-mensaje', 'Contanos un poco más (mínimo 20 caracteres).');
+    valid = false;
+  } else { clearFieldError('campo-mensaje', 'error-mensaje'); }
+
+  return valid;
+}
+
+/* Validación en tiempo real al salir del campo */
+['campo-nombre','campo-email','campo-mensaje'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('blur', validateForm);
+});
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formError.style.display = 'none';
+
+    if (!validateForm()) return;
+
+    /* UI de carga */
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+
+    const data = new FormData(contactForm);
+
+    try {
+      const res = await fetch('https://formsubmit.co/korvestudio@gmail.com', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        contactForm.style.display = 'none';
+        formSuccess.style.display = 'block';
+        formError.style.display = 'none';
+      } else {
+        throw new Error('Error del servidor');
+      }
+    } catch {
+      formError.style.display = 'block';
+      submitBtn.disabled = false;
+      btnText.style.display = 'inline';
+      btnLoading.style.display = 'none';
+    }
+  });
+}
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
+
+/* ---- Tranquilizers stagger al entrar en viewport ---- */
+const tranqObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.tranquilizers li').forEach((li, i) => {
+        setTimeout(() => {
+          li.style.opacity = '1';
+          li.style.transform = 'translateX(0)';
+        }, i * 100);
+      });
+      tranqObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.contact-left').forEach(el => tranqObserver.observe(el));
 </script>
 </body>
 </html>
