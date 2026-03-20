@@ -7,6 +7,7 @@
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
+<!-- etiquetas para SEO-->
 <title>Korve Estudio | Diseño y Desarrollo Web · Estudio Creativo</title>
 <meta name="description" content="Diseñamos y desarrollamos tu web con foco en conversión. Landing pages, rediseños y webs corporativas. Entrega en 2–4 semanas. Sin plantillas genéricas.">
 <meta name="keywords" content="diseño web Argentina, desarrollo web, landing page, rediseño web, estudio creativo, Mendoza">
@@ -14,7 +15,7 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://korveestudio.com/">
 
-<!-- Open Graph / Facebook -->
+<!-- open graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://korveestudio.com/">
 <meta property="og:title" content="Korve Estudio | Webs que convencen">
@@ -23,7 +24,7 @@
 <meta property="og:locale" content="es_AR">
 <meta property="og:site_name" content="Korve Estudio">
 
-<!-- Twitter Card -->
+<!-- twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Korve Estudio | Webs que convencen">
 <meta name="twitter:description" content="Diseño y desarrollo web para negocios. Webs claras, rápidas y pensadas para convertir visitas en consultas.">
@@ -60,9 +61,7 @@
 </script>
 
 <style>
-/* ============================================================
-   KORVE ESTUDIO — RETRO VINTAGE v7
-   ============================================================ */
+
 :root {
   --cream:      #f2ead8;
   --cream2:     #e8dfc8;
@@ -72,7 +71,7 @@
   --ink2:       #3d3828;
   --ink3:       #7a7260;
 
-  /* Core retro palette */
+  /* paleta de colroes */
   --red:        #c23b22;
   --coral:      #d4603a;
   --mustard:    #c9930a;
@@ -85,8 +84,8 @@
   --plum:       #7a3a5e;
 
   /* Section bg colors */
-  --bg-stripes: #4a6e8a;   /* dusty blue for stripes bg */
-  --bg-rust:    #c23b22;   /* red rust */
+  --bg-stripes: #4a6e8a;   
+  --bg-rust:    #c23b22;   
   --bg-teal:    #2d7a6e;
   --bg-dark:    #1e1a14;
   --bg-mustard: #c9930a;
@@ -114,7 +113,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ============ GRAIN TEXTURE ============ */
+/* textura de lunares en hero */
 body::after {
   content: '';
   position: fixed;
@@ -125,12 +124,12 @@ body::after {
   mix-blend-mode: multiply;
 }
 
-/* ============ UTILS ============ */
+/* utilidades */
 .container { max-width: 1100px; margin: 0 auto; padding: 0 36px; }
 .section   { padding: 96px 0; }
 .section-sm { padding: 64px 0; }
 
-/* ========== VINTAGE TAG / ETIQUETA ========== */
+/* etiqueta vintage */
 .v-tag {
   display: inline-flex;
   align-items: center;
@@ -165,7 +164,7 @@ body::after {
 .v-tag.white  { color: var(--paper); border-color: rgba(250,246,236,0.6); }
 .v-tag.cream  { color: var(--cream); border-color: rgba(242,234,216,0.5); }
 
-/* ========== RETRO BURST (estrella verde agua) ========== */
+/* estrella verde agua */
 .burst {
   position: absolute;
   width: 160px; height: 160px;
@@ -198,7 +197,7 @@ body::after {
 }
 .burst-sm .burst-text { font-size: 9px; }
 
-/* ========== SUNBURST BG DECORATION ========== */
+/* fondo efecto retro (sunburst)*/
 .sunburst-bg {
   position: absolute;
   inset: 0;
@@ -210,7 +209,7 @@ body::after {
   pointer-events: none;
 }
 
-/* ========== VINTAGE STAMP ========== */
+/* estampa vintage */
 .stamp {
   display: inline-flex;
   align-items: center;
@@ -239,7 +238,7 @@ body::after {
   opacity: 0.4;
 }
 
-/* ========== BUTTONS ========== */
+/* botones */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -272,7 +271,7 @@ body::after {
 .btn-outline-cream { background: transparent; color: var(--cream); border-color: rgba(242,234,216,0.6); }
 .btn-outline-cream:hover { background: var(--cream); color: var(--ink); border-color: var(--cream); }
 
-/* ========== HEADLINES ========== */
+/* títulos principales */
 h2 {
   font-family: var(--font-body);
   font-size: clamp(28px, 4.2vw, 52px);
@@ -315,7 +314,7 @@ h3 em {
   content: ''; flex: 1; height: 1px; background: currentColor;
 }
 
-/* ============ NAV ============ */
+/* barra de navegación */
 nav {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 900;
@@ -344,9 +343,9 @@ nav {
 }
 .logo{
   display: flex;
-  flex-direction: column;   /* img arriba, subtítulo abajo */
-  align-items: center;      /* centrado horizontal */
-  gap: 1px;                 /* separación entre img y subtítulo */
+  flex-direction: column;   
+  align-items: center;      
+  gap: 1px;                
 
   font-family: var(--font-script);
   font-style: italic;
@@ -358,7 +357,7 @@ nav {
 }
 
 .logo img{
-  height: 32px;             /* ajustá a tu navbar */
+  height: 32px;           
   width: auto;
   display: block;
   object-fit: contain;
@@ -391,7 +390,7 @@ nav {
 .mobile-cta .btn { flex: 1; justify-content: center; font-size: 10px; padding: 11px; }
 @media (max-width: 768px) { .mobile-cta { display: flex; } body { padding-bottom: 68px; } }
 
-/* ============ HERO ============ */
+/* hero section */
 #hero {
   padding-top: 128px;
   padding-bottom: 0;
@@ -409,8 +408,8 @@ nav {
   pointer-events: none;
 }
 
-/*AGREGADO DE ANGI*/
-/* Corner decorations */
+/*agregado que hice a lo último*/
+/* decoraciones de textos esquina */
 .hero-corner-tl, .hero-corner-tr {
   position: absolute;
   top: 80px;
@@ -490,7 +489,7 @@ nav {
   font-style: italic; font-family: var(--font-script);
 }
 
-/* HERO RIGHT — retro card */
+/* tarjeta retro */
 .hero-card {
   background: var(--cream2);
   border: 2px solid var(--ink);
@@ -545,7 +544,7 @@ nav {
 .price-pill.featured .time { color: var(--paper); }
 .hero-card .btn { width: 100%; justify-content: center; margin-top: 16px; }
 
-/* HERO BOTTOM BAND */
+/* banda con movimiento - debajo del hero */
 .hero-bottom-band {
   background: var(--ink);
   margin-top: 64px;
@@ -571,7 +570,7 @@ nav {
   .hero-card { max-width: 360px; }
 }
 
-/* ============ STORY — Dark section ============ */
+/* historia de la web */
 #story {
   background: var(--bg-dark);
   color: var(--cream);
@@ -603,7 +602,7 @@ nav {
   .story-grid { grid-template-columns: 1fr; }
 }
 
-/* ============ GIANT DISPLAY SECTION ============ */
+/* display break section*/
 #display-break {
   background: var(--mustard);
   padding: 60px 0;
@@ -639,12 +638,12 @@ nav {
   position: relative; flex-shrink: 0;
 }
 
-/* ============ PROBLEMS — Stripes section ============ */
+/* problemas */
 #problema {
   position: relative; overflow: hidden;
   background: var(--bg-stripes);
 }
-/* Vertical stripes pattern */
+/* patrón vertical */
 #problema::before {
   content: '';
   position: absolute; inset: 0;
@@ -751,7 +750,7 @@ nav {
 
 @media (max-width: 768px) { .solution-grid { grid-template-columns: 1fr; gap: 40px; } }
 
-/* ============ CTA BAND ============ */
+/* banda call to action */
 .cta-band {
   background-color: var(--red);
   background-image: repeating-linear-gradient(
@@ -1938,10 +1937,6 @@ footer { background: var(--ink); color: var(--cream); padding: 48px 0 28px; }
     50%       { transform: translateY(-4px); }
   }
 }
-
-/* ============================================================
-   ANIMACIONES EXTRA — más vida
-   ============================================================ */
 
 /* Texto del h1 hero — cada línea entra con un leve slide desde abajo */
 #hero h1 { overflow: hidden; }
